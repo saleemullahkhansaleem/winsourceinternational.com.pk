@@ -9,7 +9,7 @@ export default function Footer({ setDarkMode, darkMode }) {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="col-span-2">
-            <div className="text-foreground mb-8 border-b border-white/5 pb-4">
+            <div className="text-foreground mb-4 border-white/5">
               <Link to="/" className="flex flex-col items-center">
                 <img
                   src="/ws-logo-light.svg"
@@ -30,42 +30,12 @@ export default function Footer({ setDarkMode, darkMode }) {
                 </div>
               </Link>
             </div>
-            <h3 className="text-xl font-semibold mb-4">About Us</h3>
-            <p className="text-muted-foreground">
+            {/* <h3 className="text-xl font-semibold mb-4">About Us</h3> */}
+            <p className="text-muted-foreground text-center">
               Win Source International provides high-quality, sustainable
               mineral resources globally. We are committed to reliability and
               excellence in service. Discover premium mineral solutions with us.
             </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Our Products</h3>
-            <ul className="space-y-2">
-              {navigation[2]?.subItems?.map((service, index) => (
-                <li key={index}>
-                  <Link
-                    to={service.href}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2">
-              {navigation[3]?.subItems?.map((service, index) => (
-                <li key={index}>
-                  <Link
-                    to={service.href}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
@@ -102,6 +72,36 @@ export default function Footer({ setDarkMode, darkMode }) {
                   Contact
                 </Link>
               </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Our Products</h3>
+            <ul className="space-y-2">
+              {navigation[2]?.subItems?.map((service, index) => (
+                <li key={index}>
+                  <Link
+                    to={service.href}
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Our Services</h3>
+            <ul className="space-y-2">
+              {navigation[3]?.subItems?.map((service, index) => (
+                <li key={index}>
+                  <Link
+                    to={service.href}
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
