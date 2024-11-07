@@ -12,7 +12,7 @@ import {
   Home,
   NotFound,
 } from "./pages";
-import { ServiceDetail } from "./components";
+import { ProductsDetail, ServiceDetail } from "./components";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "edge-mall-ceremony",
         element: <EdgeMallCeremony />,
+      },
+      {
+        path: "products/:productId",
+        element: <ProductsDetail />,
       },
       {
         path: "services/:serviceId",

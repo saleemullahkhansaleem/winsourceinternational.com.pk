@@ -1,65 +1,80 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
-import { HighlightedEvent, LogoCarousel, VideoSection } from "@/components";
+import {
+  HeroSection,
+  HighlightedEvent,
+  LogoCarousel,
+  VideoSection,
+} from "@/components";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { Gallery } from ".";
 
 export const services = [
   {
-    title: "Event Management",
-    image: "/services/service1.webp",
-    path: "/services/event-management",
+    title: "Construction And Industrial Minerals Group",
+    image: "/services/construction-industrial.webp",
+    path: "/services/construction-industrial",
     description:
-      "Provides out-of-the-box solutions, focusing on uniqueness for every client and event.",
+      "Specializes in construction and industrial minerals for various applications.",
   },
   {
-    title: "Vendor Services",
-    image: "/services/service2.webp",
-    path: "/services/vendor-services",
+    title: "Dimension Stone",
+    image: "/services/dimension-stone.webp",
+    path: "/services/dimension-stone",
     description:
-      "Offers quality and affordable delivery through direct sourcing and special relationships.",
+      "Offers high-quality dimension stones for construction and design.",
   },
   {
-    title: "Presence in Oil & Gas Sector",
-    image: "/services/service3.webp",
-    path: "/services/oil-gas-sector",
+    title: "Fuel Minerals",
+    image: "/services/fuel-minerals.webp",
+    path: "/services/fuel-minerals",
+    description: "Provides fuel minerals for energy and industrial purposes.",
+  },
+  {
+    title: "Gemstones",
+    image: "/services/gemstones.webp",
+    path: "/services/gemstones",
+    description: "Sources and supplies precious and semi-precious gemstones.",
+  },
+  {
+    title: "Base/ Metallic Minerals Group",
+    image: "/services/base-metallic.webp",
+    path: "/services/base-metallic-minerals",
     description:
-      "Strategic operations and consulting in the oil and gas industry.",
+      "Specializes in base and metallic minerals for industrial use.",
   },
+];
+
+export const products = [
   {
-    title: "Branding & Advertising",
-    image: "/services/service4.webp",
-    path: "/services/branding-advertising",
+    title: "White Marble",
+    image: "/products/white-marble.webp",
+    path: "/products/white-marble",
     description:
-      "Aims for client growth through strategy, consulting, development, and management.",
+      "High-quality white marble, ideal for construction and design projects.",
   },
   {
-    title: "Facility Management Services",
-    image: "/services/service5.webp",
-    path: "/services/facility-management",
+    title: "Black Granite",
+    image: "/products/black-granite.webp",
+    path: "/products/black-granite",
     description:
-      "Delivers quality service with trained staff for organizational image building.",
+      "Durable and elegant black granite, perfect for countertops and flooring.",
   },
   {
-    title: "Construction",
-    image: "/services/service6.webp",
-    path: "/services/construction",
-    description: "Professional construction services for diverse projects.",
-  },
-  {
-    title: "Property Advisors",
-    image: "/services/service7.webp",
-    path: "/services/property-advisors",
+    title: "Quartz",
+    image: "/products/quartz.webp",
+    path: "/products/quartz",
     description:
-      "Provides real estate services, including transactions, advisory, and investment options.",
+      "Versatile quartz for use in countertops, tiles, and decorative applications.",
   },
   {
-    title: "Mines & Minerals",
-    image: "/services/service8.webp",
-    path: "/services/mines-minerals",
-    description: "Expert consulting and management in the mining sector.",
+    title: "Feldspar",
+    image: "/products/feldspar.webp",
+    path: "/products/feldspar",
+    description:
+      "Industrial-grade feldspar, essential for glass and ceramic manufacturing.",
   },
 ];
 
@@ -87,41 +102,79 @@ export const contactData = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <VideoSection />
-      <HighlightedEvent />
+      {/* <VideoSection /> */}
+      <HeroSection />
+      {/* <HighlightedEvent /> */}
 
-      {/* Services Section */}
+      {/* Products Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          <h2 className="text-4xl font-bold text-center mb-12">Our Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((service, index) => (
               <Card
                 key={index}
-                className="overflow-hidden flex flex-col justify-between"
+                className="overflow-hidden flex flex-col justify-between relative"
               >
                 <img
                   src={service.image}
                   alt={service.title}
                   width={300}
                   height={300}
-                  className="w-full h-60 object-cover"
+                  className="w-full aspect-square object-cover"
                 />
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    {service.description}
-                  </p>
+                <CardContent className="p-4 absolute bottom-0 bg-gradient-to-t from-muted to-muted/60">
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 className="text-xl font-semibold">{service.title}</h3>
+                    <Button variant="" className="ml-auto" size="icon" asChild>
+                      <Link to={service.path}>
+                        <ArrowRight />
+                      </Link>
+                    </Button>
+                  </div>
+                  <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
-                <CardFooter className="">
-                  <Button variant="" className="w-full" asChild>
-                    <Link to={service.path}>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className={`overflow-hidden flex flex-col justify-between relative z-0`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-muted -z-10"></div>
+                <CardContent className="flex flex-col lg:flex-row gap-4 items-center p-0">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    width={200}
+                    height={200}
+                    className="w-full lg:max-w-[200px] lg:h-full aspect-[3/2] lg:aspect-square object-cover"
+                  />
+                  <div className="p-6 flex flex-col justify-between items-start flex-1 h-full">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        {service.description}
+                      </p>
+                    </div>
+                    <Button variant="" className="self-end" asChild>
+                      <Link to={service.path}>
+                        Learn More <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
               </Card>
             ))}
           </div>
@@ -131,7 +184,7 @@ export default function Home() {
       {/* Gallery Section */}
       <Gallery />
 
-      <LogoCarousel />
+      {/* <LogoCarousel /> */}
 
       {/* Contact Section */}
       <section className="py-20">

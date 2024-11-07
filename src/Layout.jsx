@@ -3,7 +3,7 @@ import { Footer, Header, ScrollToTop } from "./components";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     if (darkMode) {

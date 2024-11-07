@@ -5,10 +5,10 @@ import { BackToTopButton, ThemeToggle } from ".";
 
 export default function Footer({ setDarkMode, darkMode }) {
   return (
-    <footer className="bg-muted pt-12 dark text-foreground">
+    <footer className="bg-muted pt-12 text-foreground">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="col-span-2">
             <div className="text-foreground mb-8 border-b border-white/5 pb-4">
               <Link to="/" className="flex flex-col items-center">
                 <img
@@ -38,9 +38,24 @@ export default function Footer({ setDarkMode, darkMode }) {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4">Our Services</h3>
+            <h3 className="text-xl font-semibold mb-4">Our Products</h3>
             <ul className="space-y-2">
               {navigation[2]?.subItems?.map((service, index) => (
+                <li key={index}>
+                  <Link
+                    to={service.href}
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Our Services</h3>
+            <ul className="space-y-2">
+              {navigation[3]?.subItems?.map((service, index) => (
                 <li key={index}>
                   <Link
                     to={service.href}
@@ -99,7 +114,6 @@ export default function Footer({ setDarkMode, darkMode }) {
           <ThemeToggle setDarkMode={setDarkMode} darkMode={darkMode} />
         </div>
       </div>
-      <div className="w-full h-4 bg-secondary"></div>
     </footer>
   );
 }

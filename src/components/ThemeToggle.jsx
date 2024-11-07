@@ -9,7 +9,7 @@ export default function ThemeToggle({ setDarkMode, darkMode }) {
       variant="ghost"
       size="icon"
       onClick={toggleDarkMode}
-      className="ml-auto self-center mr-4"
+      className="ml-auto self-center md:mr-4"
     >
       {darkMode ? (
         <Sun className="h-[1.2rem] w-[1.2rem]" />

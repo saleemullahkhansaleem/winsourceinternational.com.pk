@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   Collapsible,
   CollapsibleContent,
@@ -17,8 +17,8 @@ import { Button } from "./ui/button";
 
 export default function NavbarMobile({ navigation = [] }) {
   return (
-    <div className="lg:hidden">
-      <Sheet>
+    <div className="lg:hidden self-center">
+      <Sheet className="">
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="z-20">
             <Menu />
@@ -33,13 +33,19 @@ export default function NavbarMobile({ navigation = [] }) {
             {navigation?.map((category, index) =>
               !category?.subItems ? (
                 <SheetClose key={index} asChild>
-                  <Link
+                  <NavLink
                     to={category.href}
-                    className="flex items-center gap-3 rounded py-1 transition-all hover:text-primary"
-                    {...(category.prefetch ? { prefetch: "true" } : {})}
+                    className={({ isActive }) =>
+                      `flex items-center gap-3 rounded py-1 transition-all hover:text-primary ${
+                        isActive
+                          ? "text-primary bg-primary/10"
+                          : "text-foreground"
+                      }`
+                    }
+                    // {...(category.prefetch ? { prefetch: "true" } : {})}
                   >
                     {category.name}
-                  </Link>
+                  </NavLink>
                 </SheetClose>
               ) : (
                 <Collapsible key={index}>
@@ -62,28 +68,32 @@ export default function NavbarMobile({ navigation = [] }) {
                           <CollapsibleContent className="ml-4 space-y-2">
                             {item?.subItems.map((subItem, subIdx) => (
                               <SheetClose key={subIdx} asChild>
-                                <Link
+                                <NavLink
                                   to={subItem.href}
-                                  className="flex items-center gap-2 pt-2 hover:text-primary"
+                                  className={({ isActive }) =>
+                                    `flex items-center gap-2 pt-2 hover:text-primary`
+                                  }
                                   {...(subItem.prefetch
                                     ? { prefetch: "true" }
                                     : {})}
                                 >
                                   {subItem.name}
-                                </Link>
+                                </NavLink>
                               </SheetClose>
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
                         <SheetClose key={idx} asChild>
-                          <Link
+                          <NavLink
                             to={item.href}
-                            className="flex items-center gap-2 pt-2 hover:text-primary"
+                            className={({ isActive }) =>
+                              `flex items-center gap-2 pt-2 hover:text-primary`
+                            }
                             {...(item.prefetch ? { prefetch: "true" } : {})}
                           >
                             {item.name}
-                          </Link>
+                          </NavLink>
                         </SheetClose>
                       )
                     )}

@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function HighlightedEvent() {
   return (
-    <section className="py-8 bg-primary">
+    <section className="py-8 relative z-0">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-muted -z-10"></div>
       <div className="container mx-auto text-white flex flex-col lg:flex-row items-center justify-between p-4">
         <div className="text-center lg:text-left">
           <h2 className="text-xl md:text-3xl font-bold mb-4">

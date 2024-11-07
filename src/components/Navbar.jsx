@@ -1,15 +1,5 @@
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { NavbarMobile } from ".";
 
 export const navigation = [
@@ -19,76 +9,35 @@ export const navigation = [
     href: "/about",
   },
   {
-    name: "What We Do",
-    href: "#",
+    name: "Our Products",
+    href: "products",
+    subItems: [
+      { name: "White Marble", href: "/products/white-marble" },
+      { name: "Black Granite", href: "/products/black-granite" },
+      { name: "Quartz", href: "/products/quartz" },
+      { name: "Feldspar", href: "/products/feldspar" },
+    ],
+  },
+  {
+    name: "Our Services",
+    href: "services",
     subItems: [
       {
-        name: "Launching Ceremony of the Edge Mall - Faisalabad",
-        href: "/edge-mall-ceremony",
+        name: "Construction And Industrial Minerals Group",
+        href: "/services/construction-industrial",
       },
       {
-        name: "Event Management",
-        href: "/services/event-management",
-        subItems: [
-          {
-            name: "International Symposiums",
-            href: "/services/event-management#symposiums",
-          },
-          {
-            name: "International Conferences",
-            href: "/services/event-management#conferences",
-          },
-          {
-            name: "International Seminars",
-            href: "/services/event-management#seminars",
-          },
-          {
-            name: "Launching Ceremony",
-            href: "/services/event-management#launching-ceremony",
-          },
-          {
-            name: "Trainings/Workshops",
-            href: "/services/event-management#trainings-workshops",
-          },
-        ],
-      },
-      { name: "Vendor Services", href: "/services/vendor-services" },
-      {
-        name: "Presence in Oil & Gas Sector",
-        href: "/services/oil-gas-sector",
+        name: "Dimension Stone",
+        href: "/services/dimension-stone",
       },
       {
-        name: "Branding & Advertising",
-        href: "/services/branding-advertising",
+        name: "Fuel Minerals",
+        href: "/services/fuel-minerals",
       },
+      { name: "Gemstones", href: "/services/gemstones" },
       {
-        name: "Facility Management Services",
-        href: "/services/facility-management",
-      },
-      { name: "Construction", href: "/services/construction" },
-      { name: "Property Advisors", href: "/services/property-advisors" },
-      {
-        name: "Mines & Minerals",
-        href: "/services/mines-minerals",
-        subItems: [
-          {
-            name: "Construction And Industrial Minerals Group",
-            href: "/services/mines-minerals#construction-industrial",
-          },
-          {
-            name: "Dimension Stone",
-            href: "/services/mines-minerals#dimension-stone",
-          },
-          {
-            name: "Fuel Minerals",
-            href: "/services/mines-minerals#fuel-minerals",
-          },
-          { name: "Gemstones", href: "/services/mines-minerals#gemstones" },
-          {
-            name: "Base/ Metallic Minerals Group",
-            href: "/services/mines-minerals#base-metallic",
-          },
-        ],
+        name: "Base/ Metallic Minerals Group",
+        href: "/services/base-metallic",
       },
     ],
   },
@@ -100,50 +49,75 @@ export default function Navbar() {
   return (
     <>
       <NavbarMobile navigation={navigation} />
-      <div className="hidden lg:flex">
-        {navigation.map((item, index) =>
-          !item?.subItems ? (
-            <Link
-              className="cursor-pointer px-4 h-full flex items-center hover:text-primary"
+      <div className="hidden lg:flex ">
+        {navigation.map((item, index) => (
+          <div className="group relative" key={index}>
+            <NavLink
+              className={({ isActive }) =>
+                `cursor-pointer px-4 h-full flex items-center hover:text-primary border-b-2 ${
+                  isActive
+                    ? "text-primary border-primary bg-primary/10"
+                    : "text-foreground border-transparent"
+                }`
+              }
+              onClick={(e) => {
+                item?.subItems && e.preventDefault();
+              }}
               to={item.href}
             >
-              {item.name}
-            </Link>
-          ) : (
-            <div
-              className="group cursor-default relative px-4 h-full flex items-center hover:text-primary"
-              key={index}
-            >
               <div className="flex items-center gap-1">
-                {item.name} <MdKeyboardArrowDown size={20} />
+                {item.name}{" "}
+                {item?.subItems && <MdKeyboardArrowDown size={20} />}
               </div>
-              <div className="absolute top-full left-0 py-4 hidden group-hover:flex flex-col bg-background shadow-lg text-nowrap">
+            </NavLink>
+            {item?.subItems && (
+              <div className="absolute top-full left-0 py-4 hidden group-hover:flex flex-col bg-background shadow-lg text-nowrap min-w-60">
                 {item?.subItems?.map((subItem, ind) => (
-                  <Link
-                    key={ind}
-                    to={subItem.href}
-                    className={`relative group/sub px-4 py-2 text-foreground hover:text-primary border-b border-primary flex items-center justify-between`}
-                  >
-                    {subItem.name}{" "}
-                    {subItem.subItems && <MdKeyboardArrowRight size={20} />}
-                    <div
-                      className={`absolute right-full top-0 hidden group-hover/sub:flex flex-col bg-background shadow-lg`}
+                  <div className="relative group/sub" key={ind}>
+                    <NavLink
+                      to={subItem.href}
+                      className={({ isActive }) =>
+                        `px-4 py-2 text-foreground hover:text-primary ${
+                          ind !== item.subItems.length - 1 && "border-b"
+                        } border-foreground/5 flex items-center justify-between ${
+                          isActive
+                            ? "text-primary bg-primary/5"
+                            : "text-foreground"
+                        }`
+                      }
                     >
-                      {subItem?.subItems?.map((sub, i) => (
-                        <div
-                          className="cursor-pointer px-4 py-2 text-foreground hover:text-primary"
-                          key={i}
-                        >
-                          <Link to={sub.href}>{sub.name}</Link>
-                        </div>
-                      ))}
-                    </div>
-                  </Link>
+                      {subItem.name}{" "}
+                      {subItem?.subItems && <MdKeyboardArrowRight size={20} />}
+                    </NavLink>
+                    {subItem?.subItems && (
+                      <div
+                        className={`absolute right-full top-0 hidden group-hover/sub:flex flex-col bg-background shadow-lg`}
+                      >
+                        {subItem?.subItems?.map((sub, i) => (
+                          <div
+                            className={({ isActive }) =>
+                              `cursor-pointer px-4 py-2 text-foreground hover:text-primary ${
+                                i !== subItem?.subItems?.length - 1 &&
+                                "border-b"
+                              } border-foreground/5 ${
+                                isActive
+                                  ? "text-primary bg-primary/5"
+                                  : "text-foreground"
+                              }`
+                            }
+                            key={i}
+                          >
+                            <NavLink to={sub.href}>{sub.name}</NavLink>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
-            </div>
-          )
-        )}
+            )}
+          </div>
+        ))}
       </div>
     </>
   );

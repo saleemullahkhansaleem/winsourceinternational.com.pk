@@ -82,7 +82,7 @@ export default function Gallery() {
     currentGallery && currentSlide === currentGallery.images.length - 1;
 
   return (
-    <section className="py-12">
+    <section className="py-12 bg-muted">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bold text-center mb-12">Our Gallery</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -100,7 +100,9 @@ export default function Gallery() {
                 className="w-full aspect-square object-cover group-hover:scale-105"
               />
               <CardContent className="p-4">
-                <h3 className="text-sm md:text-base text-center font-semibold">{gallery.title}</h3>
+                <h3 className="text-sm md:text-base text-center font-semibold">
+                  {gallery.title}
+                </h3>
               </CardContent>
             </Card>
           ))}
