@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           {/* <Mountain className="w-16 h-16 mb-8 text-primary animate-pulse" /> */}
           <img
