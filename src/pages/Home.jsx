@@ -1,12 +1,7 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
-import {
-  HeroSection,
-  HighlightedEvent,
-  LogoCarousel,
-  VideoSection,
-} from "@/components";
+import { ArrowRight } from "lucide-react";
+import { HeroSection } from "@/components";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { Gallery } from ".";
@@ -192,7 +187,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-12">Contact Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactData.map((item, index) => (
-              <Card key={index} className="text-center relative group">
+              <Card key={index} className="text-center relative group bg-muted">
                 {item.link && (
                   <a href={item.link} className="absolute inset-0"></a>
                 )}

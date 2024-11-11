@@ -30,7 +30,7 @@ export default function HeroSection() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             Win Source International
           </h1>
-          <p className="text-xl sm:text-2xl mb-8 max-w-3xl">
+          <p className="text-xl sm:text-2xl mb-8 max-w-3xl text-primary">
             We bring the mountains to your doorstep
           </p>
 

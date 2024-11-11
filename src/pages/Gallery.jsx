@@ -11,44 +11,42 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Using FontAwe
 
 const galleryItems = [
   {
-    title: "INTERNATIONAL SYMPOSIUM (A WATER SECURE PAKISTAN)",
-    images: ["/gallery/is1.webp", "/gallery/is2.webp", "/gallery/is3.webp"],
-  },
-  {
-    title: "CVE-2019 (REGIONAL MEDIA TRAINING)",
+    title: "White Marble",
     images: [
-      "/gallery/cve1.webp",
-      "/gallery/cve2.webp",
-      "/gallery/cve3.webp",
-      "/gallery/cve4.webp",
+      "/gallery/white-marble1.webp",
+      "/gallery/white-marble2.webp",
+      "/gallery/white-marble3.webp",
+      "/gallery/white-marble4.webp",
+      "/gallery/white-marble5.webp",
     ],
   },
   {
-    title: "ICMC-2019 (INTERNATIONAL CONFRENCE ON MEDIA CONFLICT)",
+    title: "Black Granite",
     images: [
-      "/gallery/icmc1.webp",
-      "/gallery/icmc2.webp",
-      "/gallery/icmc3.webp",
-      "/gallery/icmc4.webp",
-      "/gallery/icmc5.webp",
-      "/gallery/icmc6.webp",
+      "/gallery/black-granite1.webp",
+      "/gallery/black-granite2.webp",
+      "/gallery/black-granite3.webp",
+      "/gallery/black-granite4.webp",
+      "/gallery/black-granite5.webp",
     ],
   },
   {
-    title: "Advance Training Workshop (25 – 27 March, 2019)",
-    images: ["/gallery/atw1.webp", "/gallery/atw2.webp", "/gallery/atw3.webp"],
+    title: "Quartz",
+    images: [
+      "/gallery/quartz1.webp",
+      "/gallery/quartz2.webp",
+      "/gallery/quartz3.webp",
+      "/gallery/quartz4.webp",
+      "/gallery/quartz5.webp",
+    ],
   },
   {
-    title: "Pur Azam Award Ceremony",
+    title: "Feldspar",
     images: [
-      "/gallery/paac1.webp",
-      "/gallery/paac2.webp",
-      "/gallery/paac3.webp",
-      "/gallery/paac4.webp",
-      "/gallery/paac5.webp",
-      "/gallery/paac6.webp",
-      "/gallery/paac7.webp",
-      "/gallery/paac8.webp",
+      "/gallery/feldspar1.webp",
+      "/gallery/feldspar2.webp",
+      "/gallery/feldspar3.webp",
+      "/gallery/feldspar4.webp",
     ],
   },
 ];
@@ -85,11 +83,11 @@ export default function Gallery() {
     <section className="py-12 bg-muted">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bold text-center mb-12">Our Gallery</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {galleryItems.map((gallery, index) => (
             <Card
               key={index}
-              className="overflow-hidden rounded-none group cursor-pointer"
+              className="overflow-hidden group cursor-pointer rounded-t-none"
               onClick={() => openDialog(gallery)}
             >
               <img
@@ -97,7 +95,7 @@ export default function Gallery() {
                 alt={gallery.title}
                 width={400}
                 height={300}
-                className="w-full aspect-square object-cover group-hover:scale-105"
+                className="w-full aspect-[3/2] object-cover group-hover:scale-105"
               />
               <CardContent className="p-4">
                 <h3 className="text-sm md:text-base text-center font-semibold">
