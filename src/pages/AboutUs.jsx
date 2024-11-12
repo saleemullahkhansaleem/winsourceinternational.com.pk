@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronRight } from "lucide-react";
-import { services } from "./Home";
+import { products, services } from "./Home"; // Assuming these hold products and services related to minerals and mining
 import { Link } from "react-router-dom";
 
 export default function AboutUs() {
@@ -15,7 +15,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="min-h-screen ">
+    <div className="">
       <div className="container mx-auto px-4 py-16">
         <motion.h1
           className="text-4xl md:text-5xl font-bold mb-8 text-center"
@@ -38,9 +38,10 @@ export default function AboutUs() {
             onValueChange={setActiveTab}
             className="w-full"
           >
-            <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsList className="grid w-full grid-cols-4 mb-8">
               <TabsTrigger value="vision">Vision & Mission</TabsTrigger>
               <TabsTrigger value="history">Our History</TabsTrigger>
+              <TabsTrigger value="products">Our Products</TabsTrigger>
               <TabsTrigger value="services">Our Services</TabsTrigger>
             </TabsList>
             <TabsContent value="vision">
@@ -52,8 +53,9 @@ export default function AboutUs() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg">
-                    Committed to provide unmatched assistance to our valued
-                    clients by providing customized solutions.
+                    Committed to becoming a global leader in the mining and
+                    minerals industry by delivering sustainable solutions for
+                    the extraction and supply of high-quality minerals.
                   </p>
                 </CardContent>
               </Card>
@@ -65,8 +67,10 @@ export default function AboutUs() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg">
-                    Focusing on competitiveness and timely task execution
-                    without even an iota of compromise on "QUALITY".
+                    We aim to lead the mining sector with innovative practices,
+                    ensuring the highest standards of environmental and social
+                    responsibility while meeting the growing global demand for
+                    mineral resources.
                   </p>
                 </CardContent>
               </Card>
@@ -78,9 +82,10 @@ export default function AboutUs() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg">
-                    Honesty – Service – Growing Together "Continue to strive
-                    hard in this challenging world for mutually Beneficial
-                    Goals"
+                    Integrity – Excellence – Sustainability "Striving to build
+                    long-term partnerships through mutual respect, innovation,
+                    and a shared commitment to growth in the minerals and mining
+                    industry."
                   </p>
                 </CardContent>
               </Card>
@@ -94,32 +99,63 @@ export default function AboutUs() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg mb-4">
-                    Established in 2008, Win Source International has been on a
-                    remarkable journey of growth and excellence:
+                    Since its establishment in 2008, Win Source International
+                    has become a recognized leader in the mining and minerals
+                    industry. Our commitment to quality and sustainability has
+                    driven our growth:
                   </p>
                   <ul className="space-y-2 text-lg">
                     <li className="flex items-start">
                       <ChevronRight className="mr-2 h-6 w-6 text-primary flex-shrink-0" />
                       <span>
-                        Focused on building strategic long-term client
-                        relationships
+                        Pioneering the extraction of rare and valuable minerals
+                        with advanced technologies
                       </span>
                     </li>
                     <li className="flex items-start">
                       <ChevronRight className="mr-2 h-6 w-6 text-primary flex-shrink-0" />
                       <span>
-                        Adherence to best practices in methodology, management,
-                        and project execution
+                        Adopting sustainable and eco-friendly mining practices
                       </span>
                     </li>
                     <li className="flex items-start">
                       <ChevronRight className="mr-2 h-6 w-6 text-primary flex-shrink-0" />
                       <span>
-                        Dedicated team that makes us stand tall in the current
-                        competitive environment
+                        Building strategic alliances to secure a steady supply
+                        of minerals to global markets
                       </span>
                     </li>
                   </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="products">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl text-primary">
+                    Our Mineral Products
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {products.map((product, index) => (
+                      <motion.div
+                        key={index}
+                        className={`flex items-center space-x-3`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <ChevronRight className="h-6 w-6 text-primary flex-shrink-0" />
+                        <Link
+                          to={product?.path}
+                          className="text-lg hover:text-primary"
+                        >
+                          {product.title}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -127,7 +163,7 @@ export default function AboutUs() {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl text-primary">
-                    Our Comprehensive Services
+                    Our Mining Services
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

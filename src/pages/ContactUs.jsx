@@ -29,7 +29,7 @@ export default function ContactUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {contactData.map((item, index) => (
-            <Card key={index} className="text-center relative group">
+            <Card key={index} className="text-center relative group bg-muted">
               {item.link && (
                 <a href={item.link} className="absolute inset-0"></a>
               )}
@@ -96,7 +96,7 @@ export default function ContactUs() {
           </div>
 
           {/* Map Section */}
-          <div className="w-full h-96 rounded-lg overflow-hidden shadow-md">
+          <div className="w-full h-full rounded-lg overflow-hidden shadow-md">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6637.707178956316!2d73.0598921761663!3d33.71273723558022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfa2b4a3278d%3A0x34a59e63033052c2!2sAl-Malik%20Centre!5e0!3m2!1sen!2sus!4v1730717219153!5m2!1sen!2sus"
               width="100%"
