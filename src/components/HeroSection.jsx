@@ -54,7 +54,7 @@ export default function HeroSection() {
 
           {/* CTA Button */}
           <Button className="group" size="lg" asChild>
-            <Link to="/contact  ">
+            <Link to="/contact">
               Contact Us
               <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
