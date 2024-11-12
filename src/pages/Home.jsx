@@ -36,7 +36,7 @@ export const services = [
   {
     title: "Base/ Metallic Minerals Group",
     image: "/services/base-metallic.webp",
-    path: "/services/base-metallic-minerals",
+    path: "/services/base-metallic",
     description:
       "Specializes in base and metallic minerals for industrial use.",
   },
