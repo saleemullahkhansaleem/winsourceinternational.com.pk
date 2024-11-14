@@ -37,10 +37,10 @@ export default function HeroSection() {
           {/* Services and Products */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              "Construction Industrial",
+              "Construction / Industrial",
               "Dimension Stone",
               "Gemstones",
-              "Base Metallic",
+              "Base / Metallic",
             ].map((service) => (
               <Link
                 key={service}

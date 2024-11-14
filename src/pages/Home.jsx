@@ -8,7 +8,7 @@ import { Gallery } from ".";
 
 export const services = [
   {
-    title: "Construction And Industrial Minerals Group",
+    title: "Construction & Industrial Minerals",
     image: "/services/construction-industrial.webp",
     path: "/services/construction-industrial",
     description:
@@ -34,7 +34,7 @@ export const services = [
     description: "Sources and supplies precious and semi-precious gemstones.",
   },
   {
-    title: "Base/ Metallic Minerals Group",
+    title: "Base / Metallic Minerals",
     image: "/services/base-metallic.webp",
     path: "/services/base-metallic",
     description:
