@@ -23,22 +23,22 @@ export const navigation = [
     href: "services",
     subItems: [
       {
-        name: "Construction And Industrial Minerals Group",
+        name: "Dimension Stone",
+        href: "/services/dimension-stone",
+      },
+      {
+        name: "Construction And Industrial Minerals",
         href: "/services/construction-industrial",
       },
       {
-        name: "Dimension Stone",
-        href: "/services/dimension-stone",
+        name: "Base / Metallic Minerals",
+        href: "/services/base-metallic",
       },
       {
         name: "Fuel Minerals",
         href: "/services/fuel-minerals",
       },
       { name: "Gemstones", href: "/services/gemstones" },
-      {
-        name: "Base/ Metallic Minerals Group",
-        href: "/services/base-metallic",
-      },
     ],
   },
   { name: "Gallery", href: "/gallery" },

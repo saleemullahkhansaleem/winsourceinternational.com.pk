@@ -8,6 +8,13 @@ import { Gallery } from ".";
 
 export const services = [
   {
+    title: "Dimension Stone",
+    image: "/services/dimension-stone.webp",
+    path: "/services/dimension-stone",
+    description:
+      "Offers high-quality dimension stones for construction and design.",
+  },
+  {
     title: "Construction & Industrial Minerals",
     image: "/services/construction-industrial.webp",
     path: "/services/construction-industrial",
@@ -15,11 +22,11 @@ export const services = [
       "Specializes in construction and industrial minerals for various applications.",
   },
   {
-    title: "Dimension Stone",
-    image: "/services/dimension-stone.webp",
-    path: "/services/dimension-stone",
+    title: "Base / Metallic Minerals",
+    image: "/services/base-metallic.webp",
+    path: "/services/base-metallic",
     description:
-      "Offers high-quality dimension stones for construction and design.",
+      "Specializes in base and metallic minerals for industrial use.",
   },
   {
     title: "Fuel Minerals",
@@ -32,13 +39,6 @@ export const services = [
     image: "/services/gemstones.webp",
     path: "/services/gemstones",
     description: "Sources and supplies precious and semi-precious gemstones.",
-  },
-  {
-    title: "Base / Metallic Minerals",
-    image: "/services/base-metallic.webp",
-    path: "/services/base-metallic",
-    description:
-      "Specializes in base and metallic minerals for industrial use.",
   },
 ];
 

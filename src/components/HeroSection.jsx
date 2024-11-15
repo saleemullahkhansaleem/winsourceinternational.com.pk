@@ -35,12 +35,13 @@ export default function HeroSection() {
           </p>
 
           {/* Services and Products */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
             {[
-              "Construction / Industrial",
               "Dimension Stone",
+              "Construction / Industrial Minerals",
+              "Base / Metallic Minerals",
+              "Fuel Minerals",
               "Gemstones",
-              "Base / Metallic",
             ].map((service) => (
               <Link
                 key={service}
