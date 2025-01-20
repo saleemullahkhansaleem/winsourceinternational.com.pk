@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER_URL = "http://adminpanel.winsource.smartsavvy.com.pk/api/";
+const SERVER_URL = "https://adminpanel.winsource.smartsavvy.com.pk/api/";
 
 const apiRequest = async (endpoint, method = "GET", data = {}, config = {}) => {
   try {
