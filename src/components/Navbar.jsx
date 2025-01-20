@@ -1,6 +1,7 @@
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { NavbarMobile } from ".";
+import { useDispatch, useSelector } from "react-redux";
 
 export const navigation = [
   { name: "Home", href: "/" },
@@ -46,15 +47,26 @@ export const navigation = [
 ];
 
 export default function Navbar() {
+  const {
+    data: services,
+    loading: loadingServices,
+    error: errorServices,
+  } = useSelector((state) => state.services);
+  const {
+    data: products,
+    loading: loadingProducts,
+    error: errorProducts,
+  } = useSelector((state) => state.products);
+
   return (
     <>
       <NavbarMobile navigation={navigation} />
-      <div className="hidden lg:flex ">
+      <div className="hidden xl:flex ">
         {navigation.map((item, index) => (
           <div className="group relative" key={index}>
             <NavLink
               className={({ isActive }) =>
-                `cursor-pointer px-4 h-full flex items-center hover:text-primary border-b-2 ${
+                `cursor-pointer px-3 h-full flex items-center hover:text-primary border-b-2 ${
                   isActive
                     ? "text-primary border-primary bg-primary/10"
                     : "text-foreground border-transparent"

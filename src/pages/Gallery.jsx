@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
@@ -7,7 +7,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Slider from "react-slick";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Using FontAwesome icons for custom arrows
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import api from "@/http/api";
 
 const galleryItems = [
   {
@@ -52,9 +53,12 @@ const galleryItems = [
 ];
 
 export default function Gallery() {
+  const sliderRef = useRef(null);
   const [currentGallery, setCurrentGallery] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderRef = useRef(null);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const openDialog = (gallery) => {
     setCurrentGallery(gallery);
@@ -79,12 +83,40 @@ export default function Gallery() {
   const isLastSlide =
     currentGallery && currentSlide === currentGallery.images.length - 1;
 
+  useEffect(() => {
+    fetchGalleryImages();
+  }, []);
+
+  const fetchGalleryImages = async () => {
+    setLoading(true);
+    api
+      .get("gallery-images")
+      .then((response) => {
+        if (response.success) {
+          setGalleryImages(response.data);
+          setError("");
+        } else {
+          setError(
+            response.message ||
+              "There was an issue with getting gallery images."
+          );
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error?.message || "Unknown error occurred.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <section className="py-12 bg-muted">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bold text-center mb-12">Our Gallery</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {galleryItems.map((gallery, index) => (
+          {galleryImages.map((gallery, index) => (
             <Card
               key={index}
               className="overflow-hidden group cursor-pointer rounded-t-none"

@@ -1,4 +1,3 @@
-import { services } from "@/pages/Home";
 import { Link } from "react-router-dom";
 import { navigation } from "./Navbar";
 import { BackToTopButton, ThemeToggle } from ".";

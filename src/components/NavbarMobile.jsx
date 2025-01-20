@@ -17,7 +17,7 @@ import { Button } from "./ui/button";
 
 export default function NavbarMobile({ navigation = [] }) {
   return (
-    <div className="lg:hidden self-center">
+    <div className="xl:hidden self-center">
       <Sheet className="">
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="z-20">
@@ -25,7 +25,7 @@ export default function NavbarMobile({ navigation = [] }) {
             <span className="sr-only">Toggle navigation</span>
           </Button>
         </SheetTrigger>
-        <SheetContent className="w-64 bg-background p-4 overflow-y-auto lg:hidden">
+        <SheetContent className="w-64 bg-background p-4 overflow-y-auto xl:hidden">
           <SheetTitle className="mb-2">Menu</SheetTitle>
           <SheetDescription></SheetDescription>
           <hr />

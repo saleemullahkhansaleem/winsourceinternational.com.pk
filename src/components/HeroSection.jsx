@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, Mountain } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function HeroSection() {
+export default function HeroSection({ services }) {
   return (
     <section className="relative min-h-[calc(100vh-93px)] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-10 text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           {/* <Mountain className="w-16 h-16 mb-8 text-primary animate-pulse" /> */}
           <img
@@ -36,19 +36,13 @@ export default function HeroSection() {
 
           {/* Services and Products */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-            {[
-              "Dimension Stone",
-              "Construction / Industrial Minerals",
-              "Base / Metallic Minerals",
-              "Fuel Minerals",
-              "Gemstones",
-            ].map((service) => (
+            {services.map((service) => (
               <Link
-                key={service}
-                to={"/services/" + service.toLowerCase().replace(" ", "-")}
+                key={service.title}
+                to={"/services/" + service.slug}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-4 transform hover:scale-105 transition-transform text-sm font-medium"
               >
-                {service}
+                {service.title}
               </Link>
             ))}
           </div>

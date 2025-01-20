@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronRight } from "lucide-react";
-import { products, services } from "./Home"; // Assuming these hold products and services related to minerals and mining
+import { productsData as products, servicesData as services } from "./Home"; // Assuming these hold products and services related to minerals and mining
 import { Link } from "react-router-dom";
 
 export default function AboutUs() {

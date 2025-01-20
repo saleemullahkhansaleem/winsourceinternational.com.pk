@@ -35,13 +35,15 @@ const Header = ({ setDarkMode, darkMode }) => {
                 >
                   <item.icon />
                 </Link>
-                {index === 0 && <span className="ml-4 text-sm font-thin">|</span>}
+                {index === 0 && (
+                  <span className="ml-4 text-sm font-thin">|</span>
+                )}
               </div>
             ))}
           </div>
         </div>
       </div>
-      <header className="bg-background/70 text-foreground sticky top-0 shadow-md z-20 backdrop-blur">
+      <header className="bg-background/70 text-foreground sticky top-0 shadow-md z-30 backdrop-blur">
         <div className="container mx-auto flex justify-between px-4">
           <div className="text-foreground py-1">
             <Link to="/" className="flex items-end gap-2">

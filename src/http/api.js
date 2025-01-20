@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER_URL = "https://api.github.com";
+const SERVER_URL = "http://adminpanel.winsource.smartsavvy.com.pk/api/";
 
 const apiRequest = async (endpoint, method = "GET", data = {}, config = {}) => {
   try {
@@ -13,7 +13,7 @@ const apiRequest = async (endpoint, method = "GET", data = {}, config = {}) => {
     return response.data;
   } catch (error) {
     console.error("API request error:", error);
-    throw error;
+    throw error?.response?.data;
   }
 };
 

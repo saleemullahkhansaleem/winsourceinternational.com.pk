@@ -9,12 +9,12 @@ import LogoCarousel from "./LogoCarousel";
 import NavbarMobile from "./NavbarMobile";
 import ServiceDetail from "./ServiceDetail";
 import ProductsDetail from "./ProductsDetail";
+import TruncateParagraph from "./TruncateParagraph";
 
 // Home
 
 import VideoSection from "./VideoSection";
 import HeroSection from "./HeroSection";
-import HighlightedEvent from "./HighlightedEvent";
 
 export {
   ThemeToggle,
@@ -28,9 +28,9 @@ export {
   NavbarMobile,
   ServiceDetail,
   ProductsDetail,
+  TruncateParagraph,
 
   //   Home
   VideoSection,
   HeroSection,
-  HighlightedEvent,
 };
