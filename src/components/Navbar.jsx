@@ -2,8 +2,9 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { NavbarMobile } from ".";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
-export const navigation = [
+export const navigationData = [
   { name: "Home", href: "/" },
   {
     name: "About Us",
@@ -47,16 +48,61 @@ export const navigation = [
 ];
 
 export default function Navbar() {
+  const [navigation, setNavigation] = useState(navigationData);
+
   const {
     data: services,
     loading: loadingServices,
     error: errorServices,
   } = useSelector((state) => state.services);
+
   const {
     data: products,
     loading: loadingProducts,
     error: errorProducts,
   } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    if (!loadingProducts && products) {
+      const productItems = products.map((product) => ({
+        name: product.title,
+        href: `/products/${product.slug}`,
+      }));
+
+      setNavigation((prev) => {
+        const updatedNavigation = [...prev];
+        const productIndex = updatedNavigation.findIndex(
+          (item) => item.name === "Our Products"
+        );
+
+        if (productIndex !== -1) {
+          updatedNavigation[productIndex].subItems = productItems;
+        }
+
+        return updatedNavigation;
+      });
+    }
+
+    if (!loadingServices && services) {
+      const serviceItems = services.map((service) => ({
+        name: service.title,
+        href: `/services/${service.slug}`,
+      }));
+
+      setNavigation((prev) => {
+        const updatedNavigation = [...prev];
+        const serviceIndex = updatedNavigation.findIndex(
+          (item) => item.name === "Our Services"
+        );
+
+        if (serviceIndex !== -1) {
+          updatedNavigation[serviceIndex].subItems = serviceItems;
+        }
+
+        return updatedNavigation;
+      });
+    }
+  }, [products, services, loadingProducts, loadingServices]);
 
   return (
     <>

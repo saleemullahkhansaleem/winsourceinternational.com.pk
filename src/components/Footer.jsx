@@ -1,8 +1,66 @@
 import { Link } from "react-router-dom";
-import { navigation } from "./Navbar";
 import { BackToTopButton, ThemeToggle } from ".";
+import { navigationData } from "./Navbar";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Footer({ setDarkMode, darkMode }) {
+  const [navigation, setNavigation] = useState(navigationData);
+
+  const {
+    data: services,
+    loading: loadingServices,
+    error: errorServices,
+  } = useSelector((state) => state.services);
+
+  const {
+    data: products,
+    loading: loadingProducts,
+    error: errorProducts,
+  } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    if (!loadingProducts && products) {
+      const productItems = products.map((product) => ({
+        name: product.title,
+        href: `/products/${product.slug}`,
+      }));
+
+      setNavigation((prev) => {
+        const updatedNavigation = [...prev];
+        const productIndex = updatedNavigation.findIndex(
+          (item) => item.name === "Our Products"
+        );
+
+        if (productIndex !== -1) {
+          updatedNavigation[productIndex].subItems = productItems;
+        }
+
+        return updatedNavigation;
+      });
+    }
+
+    if (!loadingServices && services) {
+      const serviceItems = services.map((service) => ({
+        name: service.title,
+        href: `/services/${service.slug}`,
+      }));
+
+      setNavigation((prev) => {
+        const updatedNavigation = [...prev];
+        const serviceIndex = updatedNavigation.findIndex(
+          (item) => item.name === "Our Services"
+        );
+
+        if (serviceIndex !== -1) {
+          updatedNavigation[serviceIndex].subItems = serviceItems;
+        }
+
+        return updatedNavigation;
+      });
+    }
+  }, [products, services, loadingProducts, loadingServices]);
+
   return (
     <footer className="bg-muted pt-12 text-foreground">
       <div className="container mx-auto px-4">
