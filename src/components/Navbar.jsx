@@ -13,10 +13,10 @@ export const navigation = [
     name: "Our Products",
     href: "products",
     subItems: [
-      { name: "White Marble", href: "/products/white-marble" },
-      { name: "Black Granite", href: "/products/black-granite" },
-      { name: "Quartz", href: "/products/quartz" },
-      { name: "Feldspar", href: "/products/feldspar" },
+      { name: "White Marble", href: "/products/white-marble-1" },
+      { name: "Black Granite", href: "/products/black-granite-2" },
+      { name: "Quartz", href: "/products/quartz-3" },
+      { name: "Feldspar", href: "/products/feldspar-4" },
     ],
   },
   {
@@ -25,21 +25,21 @@ export const navigation = [
     subItems: [
       {
         name: "Dimension Stone",
-        href: "/services/dimension-stone",
+        href: "/services/dimension-stone-1",
       },
       {
         name: "Construction And Industrial Minerals",
-        href: "/services/construction-industrial",
+        href: "/services/construction-industrial-2",
       },
       {
         name: "Base / Metallic Minerals",
-        href: "/services/base-metallic",
+        href: "/services/base-metallic-20",
       },
       {
         name: "Fuel Minerals",
-        href: "/services/fuel-minerals",
+        href: "/services/fuel-minerals-4",
       },
-      { name: "Gemstones", href: "/services/gemstones" },
+      { name: "Gemstones", href: "/services/gemstones-5" },
     ],
   },
   { name: "Gallery", href: "/gallery" },
