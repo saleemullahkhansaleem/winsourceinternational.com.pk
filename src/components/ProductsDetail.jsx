@@ -97,7 +97,7 @@ export default function ProductsDetail() {
 
   useEffect(() => {
     fetchProductDetail();
-  }, []);
+  }, [productId]);
 
   const fetchProductDetail = async () => {
     setLoading(true);

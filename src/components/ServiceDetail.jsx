@@ -163,7 +163,7 @@ export default function ServiceDetail() {
 
   useEffect(() => {
     fetchServiceDetail();
-  }, []);
+  }, [serviceId]);
 
   const fetchServiceDetail = async () => {
     setLoading(true);
@@ -172,7 +172,6 @@ export default function ServiceDetail() {
       .then((response) => {
         if (response.success) {
           setServiceData(response.data);
-          console.log("services details: ", response.data);
           setError("");
         } else {
           setError(
@@ -190,7 +189,6 @@ export default function ServiceDetail() {
       });
   };
 
-  // const serviceData = servicesData.find((service) => service.id === serviceId);
 
   return loading ? (
     <section className="container mx-auto py-16 px-6 lg:px-8 text-center">

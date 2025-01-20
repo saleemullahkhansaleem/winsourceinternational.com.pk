@@ -111,11 +111,6 @@ export default function Home() {
     error: errorProducts,
   } = useSelector((state) => state.products);
 
-  useEffect(() => {
-    dispatch(fetchServices());
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
   // useEffect(() => {
   //   fetchServices();
   //   fetchProducts();

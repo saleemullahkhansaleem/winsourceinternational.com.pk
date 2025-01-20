@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { NavbarMobile } from ".";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { fetchServices } from "@/redux/slices/servicesSlice";
+import { fetchProducts } from "@/redux/slices/productsSlice";
 
 export const navigationData = [
   { name: "Home", href: "/" },
@@ -48,7 +50,12 @@ export const navigationData = [
 ];
 
 export default function Navbar() {
+  const dispatch = useDispatch();
   const [navigation, setNavigation] = useState(navigationData);
+  useEffect(() => {
+    dispatch(fetchServices());
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   const {
     data: services,
