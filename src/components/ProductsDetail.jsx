@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { productsData } from "@/data";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
 export default function ProductsDetail() {
@@ -9,6 +10,20 @@ export default function ProductsDetail() {
 
   return productData ? (
     <section className="container mx-auto py-16 px-6 lg:px-8">
+      <Helmet>
+        <title>
+          {productData.title} | Win Source International - We bring the
+          mountains to your doorsteps
+        </title>
+        <meta
+          name="description"
+          content={`${productData.description} "Win Source International provides high-quality, sustainable mineral resources globally. We are committed to reliability and excellence in service. Discover premium mineral solutions with us."`}
+        />
+        <meta
+          name="keywords"
+          content="minerals, mining, extraction, supply, high-quality, sustainable, global, leader, solutions, premium, reliability, excellence, service, Win Source International, mountains, doorsteps"
+        />
+      </Helmet>
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-4xl font-bold text-primary mb-4">

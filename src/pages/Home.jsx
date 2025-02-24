@@ -12,15 +12,15 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
         <title>
-          Damaan Engineering & Services - Excellence in Engineering Solutions
+          Win Source International - We bring the mountains to your doorsteps
         </title>
         <meta
           name="description"
-          content="Damaan Engineering & Services provides top-notch engineering, consultancy, and industrial solutions. Explore our expertise in building accessories, control systems, power generators, and more."
+          content="Win Source International provides high-quality, sustainable mineral resources globally. We are committed to reliability and excellence in service. Discover premium mineral solutions with us."
         />
         <meta
           name="keywords"
-          content="Damaan Engineering, engineering services, industrial solutions, power generators, control systems, building accessories"
+          content="minerals, mining, extraction, supply, high-quality, sustainable, global, leader, solutions, premium, reliability, excellence, service, Win Source International, mountains, doorsteps"
         />
       </Helmet>
       <HeroSection services={servicesData} />

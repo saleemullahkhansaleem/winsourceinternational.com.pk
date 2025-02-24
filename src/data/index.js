@@ -214,6 +214,7 @@ export const productsData = [
     description:
       "Win Source International provides premium-quality raw quartz, a naturally durable and versatile mineral used in various industrial applications. Our raw quartz is available in different sizes and grades, making it ideal for processing into high-quality products such as engineered stone, glass, ceramics, and construction materials. With its natural purity, our quartz is a reliable choice for manufacturers seeking superior raw materials for their production needs.",
     imageUrl: "/images/products/quartz.webp",
+    testReport: "",
     subProducts: [
       {
         id: "glassy-quartz",
@@ -231,7 +232,7 @@ export const productsData = [
       },
       {
         id: "granular-milky-quartz",
-        title: "Granular Quartz / Milky Quartz",
+        title: "Granular / Milky Quartz",
         description:
           "Granular quartz, also known as milky quartz, features a cloudy or white appearance with a crystalline texture. It is commonly used in construction materials, abrasives, and chemical processing industries.",
         imageUrl: "/images/products/granular-quartz.webp",
