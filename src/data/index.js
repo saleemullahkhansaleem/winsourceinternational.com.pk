@@ -220,24 +220,28 @@ export const productsData = [
         title: "Glassy Quartz",
         description:
           "Glassy quartz is known for its high transparency and smooth texture, making it ideal for applications requiring clarity and purity, such as glass manufacturing, electronics, and precision instruments.",
+        imageUrl: "/images/products/glassy-quartz.webp",
       },
       {
         id: "semi-glassy-quartz",
         title: "Semi-Glassy Quartz",
         description:
           "Semi-glassy quartz offers a balance between transparency and opacity, making it suitable for various industrial uses, including ceramics, foundries, and engineered stone production.",
+        imageUrl: "/images/products/semi-glassy-quartz.webp",
       },
       {
         id: "granular-milky-quartz",
         title: "Granular Quartz / Milky Quartz",
         description:
           "Granular quartz, also known as milky quartz, features a cloudy or white appearance with a crystalline texture. It is commonly used in construction materials, abrasives, and chemical processing industries.",
+        imageUrl: "/images/products/granular-quartz.webp",
       },
       {
         id: "m-grade-quartz",
         title: "M-Grade Quartz",
         description:
           "M-grade quartz is a high-purity variant used in specialized applications such as silicon production, refractories, and advanced industrial processes that require superior chemical and thermal resistance.",
+        imageUrl: "/images/products/m-grade-quartz.webp",
       },
       {
         id: "smoky-quartz",
