@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronRight } from "lucide-react";
-import { productsData as products, servicesData as services } from "./Home"; // Assuming these hold products and services related to minerals and mining
 import { Link } from "react-router-dom";
+import { productsData, servicesData } from "@/data";
 
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState("vision");
@@ -138,7 +138,7 @@ export default function AboutUs() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {products.map((product, index) => (
+                    {productsData.map((product, index) => (
                       <motion.div
                         key={index}
                         className={`flex items-center space-x-3`}
@@ -148,7 +148,7 @@ export default function AboutUs() {
                       >
                         <ChevronRight className="h-6 w-6 text-primary flex-shrink-0" />
                         <Link
-                          to={product?.path}
+                          to={`/products/${product?.id}`}
                           className="text-lg hover:text-primary"
                         >
                           {product.title}
@@ -168,7 +168,7 @@ export default function AboutUs() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {services.map((service, index) => (
+                    {servicesData.map((service, index) => (
                       <motion.div
                         key={index}
                         className={`flex items-center space-x-3`}
@@ -178,7 +178,7 @@ export default function AboutUs() {
                       >
                         <ChevronRight className="h-6 w-6 text-primary flex-shrink-0" />
                         <Link
-                          to={service?.path}
+                          to={`/services/${service?.id}`}
                           className="text-lg hover:text-primary"
                         >
                           {service.title}

@@ -191,3 +191,14 @@
   background-image: radial-gradient(hsl(var(--primary)) 1px, transparent 1px);
   background-size: 1.25rem 1.25rem;
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

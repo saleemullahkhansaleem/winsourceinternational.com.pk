@@ -1,115 +1,11 @@
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { NavbarMobile } from ".";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { fetchServices } from "@/redux/slices/servicesSlice";
-import { fetchProducts } from "@/redux/slices/productsSlice";
+import { navigation } from "@/data";
 
-export const navigationData = [
-  { name: "Home", href: "/" },
-  {
-    name: "About Us",
-    href: "/about",
-  },
-  {
-    name: "Our Products",
-    href: "products",
-    subItems: [
-      { name: "White Marble", href: "/products/white-marble-1" },
-      { name: "Black Granite", href: "/products/black-granite-2" },
-      { name: "Quartz", href: "/products/quartz-3" },
-      { name: "Feldspar", href: "/products/feldspar-4" },
-    ],
-  },
-  {
-    name: "Our Services",
-    href: "services",
-    subItems: [
-      {
-        name: "Dimension Stone",
-        href: "/services/dimension-stone-1",
-      },
-      {
-        name: "Construction And Industrial Minerals",
-        href: "/services/construction-industrial-2",
-      },
-      {
-        name: "Base / Metallic Minerals",
-        href: "/services/base-metallic-20",
-      },
-      {
-        name: "Fuel Minerals",
-        href: "/services/fuel-minerals-4",
-      },
-      { name: "Gemstones", href: "/services/gemstones-5" },
-    ],
-  },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Contact Us", href: "/contact" },
-];
+
 
 export default function Navbar() {
-  const dispatch = useDispatch();
-  const [navigation, setNavigation] = useState(navigationData);
-  useEffect(() => {
-    dispatch(fetchServices());
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
-  const {
-    data: services,
-    loading: loadingServices,
-    error: errorServices,
-  } = useSelector((state) => state.services);
-
-  const {
-    data: products,
-    loading: loadingProducts,
-    error: errorProducts,
-  } = useSelector((state) => state.products);
-
-  useEffect(() => {
-    if (!loadingProducts && products) {
-      const productItems = products.map((product) => ({
-        name: product.title,
-        href: `/products/${product.slug}`,
-      }));
-
-      setNavigation((prev) => {
-        const updatedNavigation = [...prev];
-        const productIndex = updatedNavigation.findIndex(
-          (item) => item.name === "Our Products"
-        );
-
-        if (productIndex !== -1) {
-          updatedNavigation[productIndex].subItems = productItems;
-        }
-
-        return updatedNavigation;
-      });
-    }
-
-    if (!loadingServices && services) {
-      const serviceItems = services.map((service) => ({
-        name: service.title,
-        href: `/services/${service.slug}`,
-      }));
-
-      setNavigation((prev) => {
-        const updatedNavigation = [...prev];
-        const serviceIndex = updatedNavigation.findIndex(
-          (item) => item.name === "Our Services"
-        );
-
-        if (serviceIndex !== -1) {
-          updatedNavigation[serviceIndex].subItems = serviceItems;
-        }
-
-        return updatedNavigation;
-      });
-    }
-  }, [products, services, loadingProducts, loadingServices]);
 
   return (
     <>

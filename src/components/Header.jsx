@@ -48,13 +48,13 @@ const Header = ({ setDarkMode, darkMode }) => {
           <div className="text-foreground py-1">
             <Link to="/" className="flex items-end gap-2">
               <img
-                src="/ws-logo.svg"
+                src="/images/ws-logo.svg"
                 alt="logo"
                 height={100}
                 className="h-10 md:h-14 dark:hidden"
               />{" "}
               <img
-                src="/ws-logo-light.svg"
+                src="/images/ws-logo-light.svg"
                 alt="logo"
                 height={100}
                 className="h-10 md:h-14 hidden dark:block"

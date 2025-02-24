@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
@@ -8,57 +8,12 @@ import {
 } from "@/components/ui/dialog";
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import api from "@/http/api";
-
-const galleryItems = [
-  {
-    title: "White Marble",
-    images: [
-      "/gallery/white-marble1.webp",
-      "/gallery/white-marble2.webp",
-      "/gallery/white-marble3.webp",
-      "/gallery/white-marble4.webp",
-      "/gallery/white-marble5.webp",
-    ],
-  },
-  {
-    title: "Black Granite",
-    images: [
-      "/gallery/black-granite1.webp",
-      "/gallery/black-granite2.webp",
-      "/gallery/black-granite3.webp",
-      "/gallery/black-granite4.webp",
-      "/gallery/black-granite5.webp",
-    ],
-  },
-  {
-    title: "Quartz",
-    images: [
-      "/gallery/quartz1.webp",
-      "/gallery/quartz2.webp",
-      "/gallery/quartz3.webp",
-      "/gallery/quartz4.webp",
-      "/gallery/quartz5.webp",
-    ],
-  },
-  {
-    title: "Feldspar",
-    images: [
-      "/gallery/feldspar1.webp",
-      "/gallery/feldspar2.webp",
-      "/gallery/feldspar3.webp",
-      "/gallery/feldspar4.webp",
-    ],
-  },
-];
+import { galleryImages } from "@/data";
 
 export default function Gallery() {
   const sliderRef = useRef(null);
   const [currentGallery, setCurrentGallery] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [galleryImages, setGalleryImages] = useState([]);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const openDialog = (gallery) => {
     setCurrentGallery(gallery);
@@ -82,34 +37,6 @@ export default function Gallery() {
   const isFirstSlide = currentSlide === 0;
   const isLastSlide =
     currentGallery && currentSlide === currentGallery.images.length - 1;
-
-  useEffect(() => {
-    fetchGalleryImages();
-  }, []);
-
-  const fetchGalleryImages = async () => {
-    setLoading(true);
-    api
-      .get("gallery-images")
-      .then((response) => {
-        if (response.success) {
-          setGalleryImages(response.data);
-          setError("");
-        } else {
-          setError(
-            response.message ||
-              "There was an issue with getting gallery images."
-          );
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(error?.message || "Unknown error occurred.");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
 
   return (
     <section className="py-12 bg-muted">
@@ -160,7 +87,6 @@ export default function Gallery() {
                     ))}
                   </Slider>
 
-                  {/* Custom Arrows with hover effects and conditional rendering */}
                   {!isFirstSlide && (
                     <button
                       className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition duration-300"

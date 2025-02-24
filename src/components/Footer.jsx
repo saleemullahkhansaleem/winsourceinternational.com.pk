@@ -1,65 +1,8 @@
 import { Link } from "react-router-dom";
-import { BackToTopButton, ThemeToggle } from ".";
-import { navigationData } from "./Navbar";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { BackToTopButton, MrCard, ThemeToggle } from ".";
+import { navigation } from "@/data";
 
 export default function Footer({ setDarkMode, darkMode }) {
-  const [navigation, setNavigation] = useState(navigationData);
-
-  const {
-    data: services,
-    loading: loadingServices,
-    error: errorServices,
-  } = useSelector((state) => state.services);
-
-  const {
-    data: products,
-    loading: loadingProducts,
-    error: errorProducts,
-  } = useSelector((state) => state.products);
-
-  useEffect(() => {
-    if (!loadingProducts && products) {
-      const productItems = products.map((product) => ({
-        name: product.title,
-        href: `/products/${product.slug}`,
-      }));
-
-      setNavigation((prev) => {
-        const updatedNavigation = [...prev];
-        const productIndex = updatedNavigation.findIndex(
-          (item) => item.name === "Our Products"
-        );
-
-        if (productIndex !== -1) {
-          updatedNavigation[productIndex].subItems = productItems;
-        }
-
-        return updatedNavigation;
-      });
-    }
-
-    if (!loadingServices && services) {
-      const serviceItems = services.map((service) => ({
-        name: service.title,
-        href: `/services/${service.slug}`,
-      }));
-
-      setNavigation((prev) => {
-        const updatedNavigation = [...prev];
-        const serviceIndex = updatedNavigation.findIndex(
-          (item) => item.name === "Our Services"
-        );
-
-        if (serviceIndex !== -1) {
-          updatedNavigation[serviceIndex].subItems = serviceItems;
-        }
-
-        return updatedNavigation;
-      });
-    }
-  }, [products, services, loadingProducts, loadingServices]);
 
   return (
     <footer className="bg-muted pt-12 text-foreground">
@@ -69,7 +12,7 @@ export default function Footer({ setDarkMode, darkMode }) {
             <div className="text-foreground mb-4 border-white/5">
               <Link to="/" className="flex flex-col items-center">
                 <img
-                  src="/ws-logo-light.svg"
+                  src="/images/ws-logo-light.svg"
                   alt="logo"
                   height={100}
                   className="h-14 md:h-20"
@@ -81,13 +24,9 @@ export default function Footer({ setDarkMode, darkMode }) {
                   <p className="text-sm md:text-base text-primary tracking-widest">
                     We bring the mountains to your doorsteps
                   </p>
-                  {/* <span className="text-sm md:text-base font-semibold">
-                    (Private) Limited
-                  </span> */}
                 </div>
               </Link>
             </div>
-            {/* <h3 className="text-xl font-semibold mb-4">About Us</h3> */}
             <p className="text-muted-foreground text-center">
               Win Source International provides high-quality, sustainable
               mineral resources globally. We are committed to reliability and
@@ -163,12 +102,13 @@ export default function Footer({ setDarkMode, darkMode }) {
           </div>
         </div>
         <BackToTopButton />
-        <div className="mt-8 p-2 border-t border-muted-foreground/20 flex justify-between items-center text-muted-foreground">
+        <div className="mt-8 p-2 border-t border-muted-foreground/20 flex justify-between items-center text-muted-foreground text-sm">
           <p>
             &copy; {new Date().getFullYear()} Win Source International (Private)
             Limited - All rights reserved.
           </p>
           <ThemeToggle setDarkMode={setDarkMode} darkMode={darkMode} />
+          <MrCard />
         </div>
       </div>
     </footer>

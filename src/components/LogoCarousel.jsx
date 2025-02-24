@@ -3,18 +3,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const clients = [
-  { name: "PHA Foundation", image: "/clients/logo1.webp" },
-  { name: "MOL Group", image: "/clients/logo2.webp" },
-  { name: "SME Bank", image: "/clients/logo3.webp" },
-  { name: "PIMS", image: "/clients/logo4.webp" },
-  { name: "PMCHS", image: "/clients/logo5.webp" },
-  { name: "Pakistan Senate", image: "/clients/logo6.webp" },
-  { name: "MOL & Justice PAK", image: "/clients/logo7.webp" },
-  { name: "PAK Eng Council", image: "/clients/logo8.webp" },
-  { name: "PAK Red Crescent", image: "/clients/logo9.webp" },
-  { name: "NAB PAK", image: "/clients/logo10.webp" },
-  { name: "MI Hospital", image: "/clients/logo11.webp" },
-  { name: "USA Embassy", image: "/clients/logo12.webp" },
+  { name: "PHA Foundation", image: "/images/clients/logo1.webp" },
+  { name: "MOL Group", image: "/images/clients/logo2.webp" },
+  { name: "SME Bank", image: "/images/clients/logo3.webp" },
+  { name: "PIMS", image: "/images/clients/logo4.webp" },
+  { name: "PMCHS", image: "/images/clients/logo5.webp" },
+  { name: "Pakistan Senate", image: "/images/clients/logo6.webp" },
+  { name: "MOL & Justice PAK", image: "/images/clients/logo7.webp" },
+  { name: "PAK Eng Council", image: "/images/clients/logo8.webp" },
+  { name: "PAK Red Crescent", image: "/images/clients/logo9.webp" },
+  { name: "NAB PAK", image: "/images/clients/logo10.webp" },
+  { name: "MI Hospital", image: "/images/clients/logo11.webp" },
+  { name: "USA Embassy", image: "/images/clients/logo12.webp" },
 ];
 
 const LogoCarousel = () => {

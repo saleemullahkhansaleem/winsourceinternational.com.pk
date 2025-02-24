@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { contactData } from "./Home";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import api from "@/http/api";
 import { FaCheck } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { contactData } from "@/data";
 
 export default function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,6 +15,7 @@ export default function ContactUs() {
     email: "",
     subject: "",
     message: "",
+    domain_key: 0,
   });
 
   const handleChange = (e) => {
@@ -30,7 +31,13 @@ export default function ContactUs() {
       .then((response) => {
         if (response.success) {
           setSubmitted(true);
-          setFormData({ name: "", email: "", subject: "", message: "" });
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+            domain_key: 0,
+          });
           setError("");
         } else {
           setError(

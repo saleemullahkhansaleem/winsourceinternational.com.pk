@@ -4,6 +4,7 @@ import BackToTopButton from "./BackToTopButton";
 import Container from "./Container";
 import Header from "./Header";
 import Footer from "./Footer";
+import MrCard from "./MrCard";
 import Navbar from "./Navbar";
 import LogoCarousel from "./LogoCarousel";
 import NavbarMobile from "./NavbarMobile";
@@ -13,7 +14,6 @@ import TruncateParagraph from "./TruncateParagraph";
 
 // Home
 
-import VideoSection from "./VideoSection";
 import HeroSection from "./HeroSection";
 
 export {
@@ -23,6 +23,7 @@ export {
   Container,
   Header,
   Footer,
+  MrCard,
   Navbar,
   LogoCarousel,
   NavbarMobile,
@@ -31,6 +32,5 @@ export {
   TruncateParagraph,
 
   //   Home
-  VideoSection,
   HeroSection,
 };
