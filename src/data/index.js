@@ -166,18 +166,35 @@ export const productsData = [
         title: "Polished Marble",
         description:
           "Our polished marble is ideal for high-end residential and commercial spaces, offering a sophisticated and clean look for floors, walls, and countertops.",
+        images: [
+          "/images/products/white-marble/white-marble-polished.webp",
+          "/images/products/white-marble/white-marble-polished1.webp",
+          "/images/products/white-marble/white-marble-polished2.webp",
+          "/images/products/white-marble/white-marble-polished3.webp",
+          "/images/products/white-marble/white-marble-polished4.webp",
+          "/images/products/white-marble/white-marble-polished5.webp",
+          "/images/products/white-marble/white-marble-polished6.webp",
+        ],
       },
       {
         id: "blocks",
         title: "Blocks",
         description:
           "White marble blocks are available in various sizes, making them suitable for custom cutting and processing for architectural and design applications.",
+        images: [
+          "/images/products/white-marble/white-marble-block.webp",
+          "/images/products/white-marble/white-marble-block1.webp",
+          "/images/products/white-marble/white-marble-block2.webp",
+        ],
       },
       {
         id: "boulders",
         title: "Boulders",
         description:
           "Natural white marble boulders are perfect for landscaping, garden decor, and large-scale sculptural projects, offering raw beauty and durability.",
+        images: [
+          "/images/products/white-marble/white-marble-boulder.webp",
+        ],
       },
       {
         id: "marble-powder",
@@ -214,42 +231,55 @@ export const productsData = [
     description:
       "Win Source International provides premium-quality raw quartz, a naturally durable and versatile mineral used in various industrial applications. Our raw quartz is available in different sizes and grades, making it ideal for processing into high-quality products such as engineered stone, glass, ceramics, and construction materials. With its natural purity, our quartz is a reliable choice for manufacturers seeking superior raw materials for their production needs.",
     imageUrl: "/images/products/quartz.webp",
-    testReport: "",
+    testReport: "/images/products/quartz/quartz-test-report.webp",
+    mineVideos: [
+      {
+        title: "Quartz Mining Project Village Lammi District Battagram",
+        url: "https://www.youtube.com/embed/ByLQ94p0yFE?si=fb2Ux77iZOWKFGy_",
+      },
+      {
+        title: "Quartz Mining Project Village Lammi District Battagram",
+        url: "https://www.youtube.com/embed/kjh0fDW8tOU?si=aQRyH11clT3WFMC8",
+      },
+    ],
     subProducts: [
       {
         id: "glassy-quartz",
         title: "Glassy Quartz",
         description:
           "Glassy quartz is known for its high transparency and smooth texture, making it ideal for applications requiring clarity and purity, such as glass manufacturing, electronics, and precision instruments.",
-        imageUrl: "/images/products/glassy-quartz.webp",
+        images: ["/images/products/quartz/glassy-quartz.webp"],
       },
       {
         id: "semi-glassy-quartz",
         title: "Semi-Glassy Quartz",
         description:
           "Semi-glassy quartz offers a balance between transparency and opacity, making it suitable for various industrial uses, including ceramics, foundries, and engineered stone production.",
-        imageUrl: "/images/products/semi-glassy-quartz.webp",
+        images: ["/images/products/quartz/semi-glassy-quartz.webp"],
       },
       {
         id: "granular-milky-quartz",
         title: "Granular / Milky Quartz",
         description:
           "Granular quartz, also known as milky quartz, features a cloudy or white appearance with a crystalline texture. It is commonly used in construction materials, abrasives, and chemical processing industries.",
-        imageUrl: "/images/products/granular-quartz.webp",
+        images: ["/images/products/quartz/granular-quartz.webp"],
       },
       {
         id: "m-grade-quartz",
         title: "M-Grade Quartz",
         description:
           "M-grade quartz is a high-purity variant used in specialized applications such as silicon production, refractories, and advanced industrial processes that require superior chemical and thermal resistance.",
-        imageUrl: "/images/products/m-grade-quartz.webp",
+        images: ["/images/products/quartz/m-grade-quartz.webp"],
       },
       {
         id: "smoky-quartz",
         title: "Smoky Quartz",
         description:
           "Smoky quartz is a translucent to dark-colored variety known for its unique aesthetic appeal. It is often used in decorative applications, gemstones, and specialized industrial processes that require distinctive mineral properties.",
-        imageUrl: "/images/products/smoky-quartz.webp",
+        images: [
+          "/images/products/quartz/smoky-quartz.webp",
+          "/images/products/quartz/smoky-quartz1.webp",
+        ],
       },
     ],
   },
