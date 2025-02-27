@@ -108,8 +108,8 @@ export default function ProductsDetail() {
           </div>
         )}
       </section>
-      <section className="py-16 px-6 lg:px-8 bg-muted">
-        {productData.subProducts && (
+      {productData.subProducts && (
+        <section className="py-16 px-6 lg:px-8 bg-muted">
           <div className="space-y-8">
             <div className="container mx-auto">
               <h3 className="text-2xl font-semibold text-primary mb-6">
@@ -156,51 +156,53 @@ export default function ProductsDetail() {
               </div>
             </div>
           </div>
-        )}
-      </section>
+        </section>
+      )}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto">
           {/* Our Packaging */}
-        <div className="space-y-8">
-          <h3 className="text-2xl font-semibold text-primary mb-6">
-            {productData.title} Packaging
-          </h3>
+          {productData.packing && (
+            <div className="space-y-8">
+              <h3 className="text-2xl font-semibold text-primary mb-6">
+                {productData.title} Packaging
+              </h3>
 
-          <div className="space-y-4">
-            <p>
-              Standard packing available in 50 kg. <br />
-              HDPE bags in 1 or 1.25 M.T. Jumbo bags with or without liner
-              inside, or as per customer requirements.
+              <div className="space-y-4">
+                <p>
+                  Standard packing available in 50 kg. <br />
+                  HDPE bags in 1 or 1.25 M.T. Jumbo bags with or without liner
+                  inside, or as per customer requirements.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {packagingImages.map((image, i) => (
+                  <Card key={i} className="overflow-hidden">
+                    <img
+                      src={image}
+                      alt={`${productData.title} packaging ${i + 1}`}
+                      className="w-full max-w-lg object-cover"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* CTA Section */}
+          <div className="flex flex-col items-center justify-center text-center mt-12">
+            <h4 className="text-xl font-semibold mb-4">
+              Looking for high-quality {productData.title}?
+            </h4>
+            <p className="text-muted-foreground mb-6">
+              Contact us today to get a customized quote tailored to your needs.
             </p>
+            <Button asChild size="lg">
+              <Link to="/contact" className="">
+                Get a Quote
+              </Link>
+            </Button>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packagingImages.map((image, i) => (
-              <Card key={i} className="overflow-hidden">
-                <img
-                  src={image}
-                  alt={`${productData.title} packaging ${i + 1}`}
-                  className="w-full max-w-lg object-cover"
-                />
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="flex flex-col items-center justify-center text-center mt-12">
-          <h4 className="text-xl font-semibold mb-4">
-            Looking for high-quality {productData.title}?
-          </h4>
-          <p className="text-muted-foreground mb-6">
-            Contact us today to get a customized quote tailored to your needs.
-          </p>
-          <Button asChild size="lg">
-            <Link to="/contact" className="">
-              Get a Quote
-            </Link>
-          </Button>
-        </div>
         </div>
       </section>
     </>

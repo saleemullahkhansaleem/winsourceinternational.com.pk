@@ -1,45 +1,6 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 export const servicesData = [
-  //   {
-  //     id: "mines-minerals",
-  //     title: "Mines & Minerals",
-  //     description:
-  //       "Win Source International provides specialized services in the mining sector, offering solutions that encompass exploration, extraction, and processing. With a focus on sustainable practices, we ensure the responsible use of resources while maximizing client value. Our dedicated team is committed to innovation and efficiency within the mining industry.",
-  //     imageUrl: "/images/services/service8.webp",
-  //     subServices: [
-  //       {
-  //         id: "construction-industrial-minerals",
-  //         title: "Construction And Industrial Minerals Group",
-  //         description:
-  //           "Our team provides expertise in the construction and industrial minerals sector, ensuring the sustainable sourcing and processing of essential minerals for construction and industrial use.",
-  //       },
-  //       {
-  //         id: "dimension-stone",
-  //         title: "Dimension Stone",
-  //         description:
-  //           "We specialize in the extraction and supply of high-quality dimension stones, meeting the standards for various architectural and decorative purposes.",
-  //       },
-  //       {
-  //         id: "fuel-minerals",
-  //         title: "Fuel Minerals",
-  //         description:
-  //           "Win Source International offers services in the exploration and development of fuel minerals, ensuring a stable and sustainable supply for energy needs.",
-  //       },
-  //       {
-  //         id: "gemstones",
-  //         title: "Gemstones",
-  //         description:
-  //           "Our gemstone division focuses on sourcing and processing precious and semi-precious stones, ensuring authenticity and quality for our clients.",
-  //       },
-  //       {
-  //         id: "base-metallic-minerals",
-  //         title: "Base / Metallic Minerals Group",
-  //         description:
-  //           "With a focus on base and metallic minerals, we offer extraction and processing solutions that meet industry standards for a wide range of applications.",
-  //       },
-  //     ],
-  //   },
   {
     id: "construction-industrial",
     title: "Construction / Industrial Minerals",
@@ -192,9 +153,7 @@ export const productsData = [
         title: "Boulders",
         description:
           "Natural white marble boulders are perfect for landscaping, garden decor, and large-scale sculptural projects, offering raw beauty and durability.",
-        images: [
-          "/images/products/white-marble/white-marble-boulder.webp",
-        ],
+        images: ["/images/products/white-marble/white-marble-boulder.webp"],
       },
       {
         id: "marble-powder",
@@ -282,6 +241,7 @@ export const productsData = [
         ],
       },
     ],
+    packing: true,
   },
   {
     id: "feldspar",
@@ -303,6 +263,7 @@ export const productsData = [
           "This feldspar is ideal for glass production, offering excellent transparency, durability, and strength for high-end glass products.",
       },
     ],
+    packing: true,
   },
 ];
 
