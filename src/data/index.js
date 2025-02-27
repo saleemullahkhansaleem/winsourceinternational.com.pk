@@ -160,6 +160,12 @@ export const productsData = [
         title: "Marble Powder",
         description:
           "Finely processed white marble powder is widely used in construction, paints, coatings, and industrial applications for its superior quality and versatility.",
+        images: [
+          "/images/products/white-marble/white-marble-powder.webp",
+          "/images/products/white-marble/white-marble-powder1.webp",
+          "/images/products/white-marble/white-marble-powder2.webp",
+          "/images/products/white-marble/white-marble-powder3.webp",
+        ],
       },
     ],
   },

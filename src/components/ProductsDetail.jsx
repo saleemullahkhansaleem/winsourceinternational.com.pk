@@ -80,7 +80,7 @@ export default function ProductsDetail() {
         {productData.mineVideos && productData.mineVideos.length > 0 && (
           <div className="container mx-auto mt-16 space-y-8">
             <h3 className="text-2xl font-semibold text-primary mb-6">
-              Inside Our {productData.title} Mine
+              Insights Our {productData.title} Mine
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {productData.mineVideos.map((video, i) => (
