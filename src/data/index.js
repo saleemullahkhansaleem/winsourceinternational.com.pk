@@ -177,16 +177,45 @@ export const productsData = [
     imageUrl: "/images/products/black-granite.webp",
     subProducts: [
       {
-        id: "polished-black-granite",
-        title: "Polished Black Granite",
+        id: "polished-granite",
+        title: "Polished Granite Countertops / Slabs",
         description:
-          "Our polished black granite is smooth, reflective, and highly durable, making it perfect for luxurious countertops, kitchen islands, and floors.",
+          "High-quality polished black granite slabs and countertops, perfect for kitchen islands, bathroom vanities, and flooring. Offers a sleek and luxurious finish.",
+        images: [
+          "/images/products/black-granite/black-granite-polished.webp",
+          "/images/products/black-granite/black-granite-polished1.webp",
+          "/images/products/black-granite/black-granite-polished2.webp",
+        ],
       },
       {
-        id: "flamed-black-granite",
-        title: "Flamed Black Granite",
+        id: "blocks",
+        title: "Blocks",
         description:
-          "Flamed black granite is perfect for outdoor use, offering a textured surface that is slip-resistant and ideal for walkways, outdoor kitchens, and patio areas.",
+          "Black granite blocks available in various sizes, suitable for custom cutting and processing for architectural and design applications.",
+        images: [
+          "/images/products/black-granite/black-granite-block.webp",
+          "/images/products/black-granite/black-granite-block1.webp",
+        ],
+      },
+      {
+        id: "boulders",
+        title: "Boulders",
+        description:
+          "Natural black granite boulders, ideal for landscaping, garden decor, and large-scale sculptural projects, offering a raw and durable aesthetic.",
+        images: [
+          "/images/products/black-granite/black-granite-boulder.webp",
+          "/images/products/black-granite/black-granite-boulder1.webp",
+        ],
+      },
+      {
+        id: "granite-powder",
+        title: "Granite Powder",
+        description:
+          "Finely processed black granite powder used in construction, coatings, industrial applications, and decorative finishes for its strength and durability.",
+        images: [
+          "/images/products/black-granite/black-granite-powder.webp",
+          "/images/products/black-granite/black-granite-powder1.webp",
+        ],
       },
     ],
   },
@@ -261,12 +290,14 @@ export const productsData = [
         title: "Ceramic Grade Feldspar",
         description:
           "Our ceramic-grade feldspar is used in the production of high-quality ceramics, providing excellent performance in terms of strength and durability.",
+        images: ["/images/products/feldspar/ceramic-grade-feldspar.webp"],
       },
       {
         id: "glass-grade-feldspar",
         title: "Glass Grade Feldspar",
         description:
           "This feldspar is ideal for glass production, offering excellent transparency, durability, and strength for high-end glass products.",
+          images: ["/images/products/feldspar/glass-grade-feldspar.webp"],
       },
     ],
     packing: true,

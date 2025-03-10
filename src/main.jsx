@@ -6,8 +6,8 @@ import Layout from "./Layout.jsx";
 import "@fontsource/poppins";
 import { AboutUs, ContactUs, Gallery, Home, NotFound } from "./pages";
 import { ProductsDetail, ServiceDetail } from "./components";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+// import { Provider } from "react-redux";
+// import store from "./redux/store";
 import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
@@ -49,10 +49,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider store={store}>
+    {/* <Provider store={store}> */}
       <HelmetProvider>
         <RouterProvider router={router} />
       </HelmetProvider>
-    </Provider>
+    {/* </Provider> */}
   </StrictMode>
 );
