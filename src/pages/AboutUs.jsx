@@ -48,11 +48,11 @@ export default function AboutUs() {
         transition={{ delay: 0.2 }}
       >
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
             <TabsTrigger value="vision">Vision & Mission</TabsTrigger>
             <TabsTrigger value="history">Our History</TabsTrigger>
             <TabsTrigger value="products">Our Products</TabsTrigger>
-            <TabsTrigger value="services">Our Services</TabsTrigger>
+            {/* <TabsTrigger value="services">Our Services</TabsTrigger> */}
           </TabsList>
           <TabsContent value="vision">
             <Card className="mb-6">
@@ -169,7 +169,7 @@ export default function AboutUs() {
               </CardContent>
             </Card>
           </TabsContent>
-          <TabsContent value="services">
+          {/* <TabsContent value="services">
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl text-primary">
@@ -198,7 +198,7 @@ export default function AboutUs() {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
         </Tabs>
       </motion.div>
     </div>

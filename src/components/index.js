@@ -15,6 +15,7 @@ import TruncateParagraph from "./TruncateParagraph";
 // Home
 
 import HeroSection from "./HeroSection";
+import GallerySection from "./GallerySection";
 
 export {
   ThemeToggle,
@@ -33,4 +34,5 @@ export {
 
   //   Home
   HeroSection,
+  GallerySection,
 };

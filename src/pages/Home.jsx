@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { HeroSection, TruncateParagraph } from "@/components";
+import { GallerySection, HeroSection, TruncateParagraph } from "@/components";
 import { Link } from "react-router-dom";
 import { Gallery } from ".";
 import { Helmet } from "react-helmet-async";
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -108,10 +108,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Gallery Section */}
-      <Gallery />
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Our Gellary</h2>
+          <GallerySection />
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section className="py-20">

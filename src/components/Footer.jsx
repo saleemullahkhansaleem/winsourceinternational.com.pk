@@ -3,7 +3,6 @@ import { BackToTopButton, MrCard, ThemeToggle } from ".";
 import { navigation } from "@/data";
 
 export default function Footer({ setDarkMode, darkMode }) {
-
   return (
     <footer className="bg-muted pt-12 text-foreground">
       <div className="container mx-auto px-4">
@@ -33,6 +32,7 @@ export default function Footer({ setDarkMode, darkMode }) {
               excellence in service. Discover premium mineral solutions with us.
             </p>
           </div>
+          <div></div>
           <div>
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -85,7 +85,7 @@ export default function Footer({ setDarkMode, darkMode }) {
               ))}
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               {navigation[3]?.subItems?.map((service, index) => (
@@ -99,7 +99,7 @@ export default function Footer({ setDarkMode, darkMode }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
         <BackToTopButton />
         <div className="mt-8 p-2 border-t border-muted-foreground/20 flex justify-between items-center text-muted-foreground text-sm">

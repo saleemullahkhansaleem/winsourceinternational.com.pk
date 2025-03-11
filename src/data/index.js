@@ -284,6 +284,7 @@ export const productsData = [
     description:
       "Feldspar is a key mineral used in the manufacturing of ceramics, glass, and other industrial products. Win Source International offers high-quality feldspar suitable for a wide range of applications, including ceramics, glass production, and as a filler in other industrial products.",
     imageUrl: "/images/products/feldspar.webp",
+    testReport: "/images/products/feldspar/feldspar-test-report.webp",
     subProducts: [
       {
         id: "ceramic-grade-feldspar",
@@ -297,7 +298,7 @@ export const productsData = [
         title: "Glass Grade Feldspar",
         description:
           "This feldspar is ideal for glass production, offering excellent transparency, durability, and strength for high-end glass products.",
-          images: ["/images/products/feldspar/glass-grade-feldspar.webp"],
+        images: ["/images/products/feldspar/glass-grade-feldspar.webp"],
       },
     ],
     packing: true,
@@ -362,29 +363,29 @@ export const navigation = [
       { name: "Feldspar", href: "/products/feldspar" },
     ],
   },
-  {
-    name: "Our Services",
-    href: "services",
-    subItems: [
-      {
-        name: "Dimension Stone",
-        href: "/services/dimension-stone",
-      },
-      {
-        name: "Construction And Industrial Minerals",
-        href: "/services/construction-industrial",
-      },
-      {
-        name: "Base / Metallic Minerals",
-        href: "/services/base-metallic",
-      },
-      {
-        name: "Fuel Minerals",
-        href: "/services/fuel-minerals",
-      },
-      { name: "Gemstones", href: "/services/gemstones" },
-    ],
-  },
+  // {
+  //   name: "Our Services",
+  //   href: "services",
+  //   subItems: [
+  //     {
+  //       name: "Dimension Stone",
+  //       href: "/services/dimension-stone",
+  //     },
+  //     {
+  //       name: "Construction And Industrial Minerals",
+  //       href: "/services/construction-industrial",
+  //     },
+  //     {
+  //       name: "Base / Metallic Minerals",
+  //       href: "/services/base-metallic",
+  //     },
+  //     {
+  //       name: "Fuel Minerals",
+  //       href: "/services/fuel-minerals",
+  //     },
+  //     { name: "Gemstones", href: "/services/gemstones" },
+  //   ],
+  // },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
 ];
