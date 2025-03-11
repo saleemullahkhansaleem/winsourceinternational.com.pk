@@ -8,7 +8,7 @@ const Header = ({ setDarkMode, darkMode }) => {
     <>
       <div className="w-full py-1 px-4 bg-muted text-foreground border-b border-muted-foreground dark">
         <div className="container mx-auto flex justify-between items-center">
-          <p className="text-sm">
+          <p className="text-sm line-clamp-1">
             Third Floor, Al-Malik Centre, 70-West, Jinnah Avenue, Blue Area,
             Islamabad.
           </p>
