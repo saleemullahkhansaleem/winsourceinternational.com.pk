@@ -5,7 +5,7 @@ import { GallerySection, HeroSection, TruncateParagraph } from "@/components";
 import { Link } from "react-router-dom";
 import { Gallery } from ".";
 import { Helmet } from "react-helmet-async";
-import { contactData, productsData, servicesData } from "@/data";
+import { contactData, productsData } from "@/data";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
           content="minerals, mining, extraction, supply, high-quality, sustainable, global, leader, solutions, premium, reliability, excellence, service, Win Source International, mountains, doorsteps"
         />
       </Helmet>
-      <HeroSection services={servicesData} />
+      <HeroSection data={productsData} />
 
       {/* Products Section */}
       <section className="py-20 bg-muted">
@@ -111,12 +111,12 @@ export default function Home() {
       </section> */}
 
       {/* Gallery Section */}
-      <section className="py-20 bg-muted">
+      {/* <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Our Gellary</h2>
           <GallerySection />
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section className="py-20">

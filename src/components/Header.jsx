@@ -59,11 +59,11 @@ const Header = ({ setDarkMode, darkMode }) => {
                 height={100}
                 className="h-10 md:h-14 hidden dark:block"
               />{" "}
-              <div className="flex flex-col items-end">
-                <span className="text-base md:text-2xl font-bold uppercase">
+              <div className="flex-col items-end hidden md:flex">
+                <span className="text-sm md:text-xl font-bold uppercase">
                   Win Source International
                 </span>{" "}
-                <span className="text-sm md:text-base font-semibold">
+                <span className="text-xs md:text-base font-semibold text-muted-foreground">
                   (Private) Limited
                 </span>
               </div>

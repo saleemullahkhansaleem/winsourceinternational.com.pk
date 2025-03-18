@@ -52,14 +52,14 @@ export default function Footer({ setDarkMode, darkMode }) {
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/gallery"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Gallery
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/contact"

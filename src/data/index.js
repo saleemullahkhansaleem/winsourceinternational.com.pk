@@ -285,6 +285,12 @@ export const productsData = [
       "Feldspar is a key mineral used in the manufacturing of ceramics, glass, and other industrial products. Win Source International offers high-quality feldspar suitable for a wide range of applications, including ceramics, glass production, and as a filler in other industrial products.",
     imageUrl: "/images/products/feldspar.webp",
     testReport: "/images/products/feldspar/feldspar-test-report.webp",
+    mineVideos: [
+      {
+        title: "Feldspar Mine Activity",
+        url: "https://www.youtube.com/embed/g2BUny292uE?si=8JI-gu9EK6foKLPf",
+      },
+    ],
     subProducts: [
       {
         id: "ceramic-grade-feldspar",
@@ -386,7 +392,7 @@ export const navigation = [
   //     { name: "Gemstones", href: "/services/gemstones" },
   //   ],
   // },
-  { name: "Gallery", href: "/gallery" },
+  // { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
 ];
 

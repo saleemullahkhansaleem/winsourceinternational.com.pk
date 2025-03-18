@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function HeroSection({ services }) {
+export default function HeroSection({ data }) {
   return (
     <section className="relative min-h-[calc(100vh-93px)] flex items-center justify-center overflow-hidden">
       <div
@@ -28,14 +28,14 @@ export default function HeroSection({ services }) {
             We bring the mountains to your doorstep
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-            {services.map((service) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mb-12 w-full">
+            {data.map((item) => (
               <Link
-                key={service.title}
-                to={"/services/" + service.id}
+                key={item.title}
+                to={"/products/" + item.id}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-4 transform hover:scale-105 transition-transform text-sm font-medium"
               >
-                {service.title}
+                {item.title}
               </Link>
             ))}
           </div>
